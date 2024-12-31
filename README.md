@@ -199,7 +199,7 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
 
 # Notlandırma Kriterleri
 
-## 1. IT1: Görseldeki bir tasarımı anlamlı bir HTML yapısı ve doğru semantik tagler kullanarak, hizalamalara ve CSS özelliklerine dikkat ederek koda dökebilir.
+## 1. IT1: Görseldeki bir tasarımı anlamlı bir HTML yapısı ve doğru semantik tagler kullanarak, hizalamalara ve CSS özelliklerine dikkat ederek koda dökebilir. (7%)
 
 - **1 Gereksinimlerin Altında:**
 
@@ -221,7 +221,7 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - CSS özelliklerini (örn. geçişler, animasyonlar) kullanarak kullanıcı deneyimini zenginleştirir ve tasarımın estetik değerini artırır.
   - Kod, yüksek düzeyde optimize edilmiş, okunabilir ve yeniden kullanılabilir olup, en iyi uygulamaları (best practices) takip eder.
 
-## 2. IT2: Görseldeki bir tasarımı anlamlı bir HTML yapısı ve doğru semantik tagler kullanarak, hizalamalara ve CSS özelliklerine dikkat ederek koda dökebilir.
+## 2. IT2: Görseldeki bir tasarımı anlamlı bir HTML yapısı ve doğru semantik tagler kullanarak, hizalamalara ve CSS özelliklerine dikkat ederek koda dökebilir. (10%)
 
 - **1 Gereksinimlerin Altında:**
 
@@ -237,7 +237,7 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Aday, semantik anlamda zengin ve erişilebilir bir HTML yapısı oluşturmuş. Ek HTML5 özellikleri, ARIA rolleri kullanılarak sayfa hem insanlar hem de arama motorları için optimize edilmiş.
   - Aday, ileri düzey CSS teknikleri ve selectorler kullanarak detaylı ve karmaşık tasarım özelliklerini başarıyla kodlamış. CSS Grid veya Flexbox gibi modern layout sistemleri, form eleman özelliştirmeleri, animasyonlar, ve pseudo-elementler gibi gelişmiş özellikler etkili bir şekilde kullanılmış. Sayfa mükemmel bir şekilde responsive ve interaktif özelliklere sahip.
 
-## 3. IT2: tasarımları uyarlayabilir ve yaptığı sayfayı responsive hale getirebilir.
+## 3. IT2: tasarımları uyarlayabilir ve yaptığı sayfayı responsive hale getirebilir. (8%)
 
 - **1 Gereksinimlerin Altında:**
 
@@ -258,7 +258,7 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Sayfa, tüm cihaz ve ekran boyutlarında mükemmel bir şekilde çalışacak şekilde tasarlanmıştır; yüksek performans ve erişilebilirlik için ileri düzey optimizasyonlar yapılır.
   - Kod, en iyi uygulamaları yansıtır, son derece modüler ve yeniden kullanılabilir yapıdadır; kod kalitesi ve sürdürülebilirlik açısından örnek teşkil eder.
 
-## 4. Form elemanlarını ilgili etiketleriyle eşleştirebilir. Checkbox ve radiobutton gibi form semantiklerini doğru bir şekilde anlar ve uygular.
+## 4. Form elemanlarını ilgili etiketleriyle eşleştirebilir. Checkbox ve radiobutton gibi form semantiklerini doğru bir şekilde anlar ve uygular. (15%)
 
 - **1 Gereksinimlerin Altında:**
 
@@ -277,7 +277,7 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Gelişmiş form semantiklerini anlar ve uygular, özellikle checkbox ve radiobutton gruplarını anlamlandırma ve kullanıcı deneyimini iyileştirme konusunda üstün bir yaklaşım sergiler. Farklı tiplerdeki alanları ortak event handlerlar ile yönetebilir.
   - Controlled form elemanları ile ilgili event flow’u ileri düzeyde yönetir; form verisini etkin bir şekilde toplar ve işler. `useState` ve `useEffect` gibi React hook’larını kullanarak form durumunu dinamik ve etkili bir şekilde yönetir.
 
-## 5. Kodu componentlere bölebilir, bu componentları map metodu ile kullanabilir.
+## 5. Kodu componentlere bölebilir, bu componentları map metodu ile kullanabilir. (8%)
 
 - **1 Gereksinimlerin Altında:**
 
@@ -296,7 +296,7 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - `map` metodu ile karmaşık ya da basit bütün veri yapılarını ve listeleri ustalıkla render eder; dinamik içeriği yönetmede ve güncellemelerde yüksek performans ve kullanıcı deneyimi sağlar.
   - Componentler arası veri akışını ve durum yönetimini (state management) sorunsuz düzeyde yönetebilir.
 
-## 6. Veri akışını ve event handlerlar ile veri yönetimini bilir ve formları kullanırken veri doğrulaması yapabilir.
+## 6. Veri akışını ve event handlerlar ile veri yönetimini bilir ve formları kullanırken veri doğrulaması yapabilir. (22%)
 
 - **1 Gereksinimlerin Altında:**
 
@@ -317,7 +317,7 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Form verisi işleme, event handling ve state yönetimi konularında derin bir anlayış sergiler; temiz bir kode ve ve kullanıcı deneyimini optimize eder.
   - Hata yönetimi ve kullanıcıya geribildirim mekanizmalarında eksiksiz ilerler, uygulamanın sağlamlığını ve erişilebilirliğini artırır.
 
-## 7. Pizza siparişi verilince, https://reqres.in/api/pizza adresine POST atarak, Axios request simülasyonu kurgulayabilir.
+## 7. Pizza siparişi verilince, https://reqres.in/api/pizza adresine POST atarak, Axios request simülasyonu kurgulayabilir. (5%)
 
 - **1 Gereksinimlerin Altında:**
 
@@ -337,7 +337,7 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Gelişmiş Axios konfigürasyonları kullanarak, .catch içinde hata yakalayıp kullanıcıya göstermek gibi daha düzey özellikleri etkin bir şekilde uygular.
   - Karmaşık hata yönetimi stratejileri geliştirir; farklı HTTP durum kodlarına göre detaylı hata mesajları ve kullanıcı geribildirimleri üretir.
 
-## 8.Genel olarak React JS hakkında iyi bir anlayışa sahiptir.
+## 8.Genel olarak React JS hakkında iyi bir anlayışa sahiptir. (15%)
 
 - **1 Gereksinimlerin Altında:**
 
@@ -360,7 +360,7 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Kompleks event handling ve form validation işlemlerini mükemmel bir şekilde kurgular ve uygular.
   - React’te ileri düzey veri akışı, form işlemleri, routing, ve prop passing konularında üstün beceriler gösterir.
 
-## 9. Formları da kapsayan en az üç anlamlı cypress testi yazabilir.
+## 9. Formları da kapsayan en az üç anlamlı cypress testi yazabilir. (5%)
 
 - **1 Gereksinimlerin Altında:**
 
@@ -382,7 +382,7 @@ IT1'i bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki h
   - Testler, uygulamanın kullanıcı arayüzü ve işlevselliği üzerinde detaylı kontrol sağlar; form validasyonları, form veri akışı ve dinamik içeriklerin doğrulaması gibi ileri senaryoları içerir.
   - Testler, best practice'leri takip eder, kod tekrarını minimize eder ve test süitinin okunabilirliğini ve sürdürülebilirliğini artırır.
 
-## 10. Açık uçlu soru: ... için, müşteri sayfaya yeni bir öğe eklememizi ister.
+## 10. Açık uçlu soru: ... için, müşteri sayfaya yeni bir öğe eklememizi ister. (5%)
 
 #### a) Bu yeni öğeyi eklemek için hangi tip form öğesi kullanılmalıdır?
 
