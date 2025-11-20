@@ -132,7 +132,7 @@ IT1 aşamasına getirdiğiniz (minimum viable product), aşağıdaki gereksiniml
 - [ ] Pizza boyutunun seçilebileceği bir radio
 - [ ] Notlar için ek bir text area
 - [ ] "Sipariş Ver" butonuna tıklandığında, sanki bir sunucuya veri gönderip, yanıt almış gibi davranmalı. Formda eksik bilgi veya hata varsa form disabled olmalı. (hem html hem submit fonksiyonundan gönderim engellenmeli)
-- [ ] Submit edince, Axios ile API request sonrası console'a gelen yanıtı basmalısın. [https://reqres.in/api/pizza](https://reqres.in/api/pizza) ücretsiz bir mock api servisine, `axios` ile POST ile kendi datanızı attığınızda(api key kullanmaya dikkat.  [https://reqres.in(https://reqres.in) sayfasından demo key alabilirsin), size sanki veritabanına kaydedilmiş gibi id ve tarih ekleyip aynı veriyi geri döner. (SONRASINDA GET ATMIYORUZ)
+- [ ] Submit edince, Axios ile API request sonrası console'a gelen yanıtı basmalısın. [https://reqres.in/api/pizza](https://reqres.in/api/pizza) ücretsiz bir mock api servisine, `axios` ile POST ile kendi datanızı attığınızda (API key kullanmaya dikkat.  [https://reqres.in/signup](https://reqres.in/signup) sayfasında anlattığı gibi `reqres-free-v1` değerini API key olarak kullanabiliriz. İstekte şöyle bir HTTP header olmalı: `x-api-key: reqres-free-v1`), size sanki veritabanına kaydedilmiş gibi id ve tarih ekleyip aynı veriyi geri döner. (SONRASINDA GET ATMIYORUZ)
 - [ ] Bu yanıtı gelen response'u, sipariş özeti console'a yazmalı.
 
 Not - Form'un payloadu, veri **örnek olarak** şu şekilde olabilir. **Kendiniz de bu yapıyı değiştirebilirsiniz.**
