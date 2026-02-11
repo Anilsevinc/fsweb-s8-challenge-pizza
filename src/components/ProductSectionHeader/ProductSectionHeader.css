@@ -1,0 +1,105 @@
+/* ProductSectionHeader Component Stilleri */
+.product-section-header {
+  width: 100%;
+  max-width: 1296px;
+  height: 110.453125px;
+  margin: 4rem auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-beige);
+}
+
+.product-section-subtitle {
+  position: absolute;
+  width: 408px;
+  height: 46px;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Satisfy', cursive;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 44.27px;
+  text-align: center;
+  color: var(--color-red);
+  margin: 0;
+}
+
+.product-section-title {
+  position: absolute;
+  width: 712px;
+  height: 56px;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 56.2px;
+  text-align: center;
+  color: var(--color-dark-gray);
+  margin: 0;
+}
+
+.product-section-title br {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .product-section-header {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: auto;
+  }
+
+  .product-section-subtitle {
+    position: relative;
+    width: 395px;
+    max-width: 100%;
+    height: 46px;
+    top: auto;
+    left: auto;
+    transform: none;
+    font-family: 'Satisfy', cursive;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44.27px;
+    text-align: center;
+    color: var(--color-red);
+    margin: 0 0 1rem 0;
+  }
+
+  .product-section-title {
+    position: relative;
+    width: 307.9998779296875px;
+    max-width: 100%;
+    height: auto;
+    min-height: 56px;
+    top: auto;
+    left: auto;
+    transform: none;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 56.2px;
+    text-align: center;
+    color: var(--color-dark-gray);
+    margin: 0;
+  }
+
+  .product-section-title br {
+    display: block;
+  }
+}

@@ -1,0 +1,94 @@
+/* CategoryNav Component Stilleri */
+.category-nav {
+  width: 100%;
+  margin: 0;
+  padding: 1rem 0;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.category-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  padding: 0 clamp(1rem, 6vw, 20rem);
+  width: 100%;
+  max-width: 1068px;
+  margin: 0 auto;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.category-list::-webkit-scrollbar {
+  display: none;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.category-item:hover {
+  transform: translateY(-3px);
+}
+
+.category-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.category-text {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-dark-gray);
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .category-nav {
+    padding: 1rem 0;
+  }
+
+  .category-list {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-rows: auto;
+    row-gap: 1rem;
+    column-gap: 2.5rem;
+    padding: 0 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .category-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: flex-start;
+  }
+
+  .category-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  .category-text {
+    font-size: 0.875rem;
+    white-space: nowrap;
+    text-align: left;
+  }
+}
