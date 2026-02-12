@@ -100,4 +100,16 @@ export const SuccessPage = styled.section`
     padding-top: 12px;
     border-top: 1px solid rgba(255, 255, 255, 0.4);
   }
+  .back-btn {
+    margin-top: 24px;
+    padding: 12px 24px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #292929;
+    background: #fdc913;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+  }
 `

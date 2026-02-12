@@ -3,12 +3,12 @@ import OrderHeader from './OrderHeader/OrderHeader'
 import OrderForm from './OrderForm/OrderForm'
 import { OrderPizzaSection } from './orderPizza.style'
 
-function OrderPizza({ onNavigateHome }) {
+function OrderPizza({ onNavigateHome, onOrderSuccess }) {
   return (
     <>
       <OrderHeader onNavigateHome={onNavigateHome} />
       <OrderPizzaSection>
-        <OrderForm />
+        <OrderForm onOrderSuccess={onOrderSuccess} />
       </OrderPizzaSection>
     </>
   )

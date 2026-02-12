@@ -46,7 +46,7 @@ const MALZEMELER = [
 
 const MALZEME_FIYATI = 5
 
-function OrderForm() {
+function OrderForm({ onOrderSuccess }) {
   const [formData, setFormData] = useState({
     isim: '',
     boyut: '',
@@ -111,6 +111,7 @@ function OrderForm() {
       })
       .then((res) => {
         console.log('Sipariş yanıtı:', res.data)
+        if (onOrderSuccess) onOrderSuccess(res.data)
       })
       .catch((err) => {
         console.error('Sipariş hatası:', err)
