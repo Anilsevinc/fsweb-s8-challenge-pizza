@@ -55,7 +55,7 @@
   white-space: nowrap;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .category-nav {
     padding: 1rem 0;
   }

@@ -255,10 +255,15 @@ function OrderForm({ onOrderSuccess, onNavigateHome }) {
         </FormSection>
 
         <QuantityRow>
-          <div className="quantity-group">
-            <button type="button" onClick={() => handleQuantityChange(-1)}>-</button>
-            <input type="text" value={formData.miktar} readOnly />
-            <button type="button" onClick={() => handleQuantityChange(1)}>+</button>
+          <div className="quantity-submit-row">
+            <div className="quantity-group">
+              <button type="button" onClick={() => handleQuantityChange(-1)}>-</button>
+              <input type="text" value={formData.miktar} readOnly />
+              <button type="button" onClick={() => handleQuantityChange(1)}>+</button>
+            </div>
+            <SubmitButton type="submit" disabled={!isFormValid()} className="btn-mobile">
+              SİPARİŞ VER
+            </SubmitButton>
           </div>
           <SummaryCard>
             <h3 className="summary-title">Sipariş Toplamı</h3>
@@ -273,7 +278,7 @@ function OrderForm({ onOrderSuccess, onNavigateHome }) {
               </div>
             </div>
             {submitError && <div className="submit-error">{submitError}</div>}
-            <SubmitButton type="submit" disabled={!isFormValid()}>
+            <SubmitButton type="submit" disabled={!isFormValid()} className="btn-desktop">
               SİPARİŞ VER
             </SubmitButton>
           </SummaryCard>

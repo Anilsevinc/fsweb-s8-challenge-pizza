@@ -20,7 +20,7 @@ function OrderSuccess({ orderData, onNavigateHome }) {
       </header>
       <div>
         <p className="tagline">lezzetin yolda</p>
-        <h1>Sipariş Alındı</h1>
+        <h1>SİPARİŞ ALINDI</h1>
         <hr />
         <h2>Position Absolute Acı Pizza</h2>
         <div className="details">

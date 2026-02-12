@@ -2,7 +2,14 @@ import styled from 'styled-components'
 
 export const FormWrapper = styled.div`
   width: 530px;
+  max-width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 16px;
+
+  @media (min-width: 481px) {
+    padding: 0;
+  }
 `
 
 /* Nav'ın olduğu div'i saran parent: sadece bej arka plan, full width */
@@ -62,6 +69,10 @@ export const SizeAndDoughRow = styled.div`
   & > div {
     flex: 1;
     min-width: 0;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
   }
 
   h3 {
@@ -172,6 +183,47 @@ export const PizzaInfo = styled.div`
     color: #5F5F5F;
     margin: 0;
   }
+
+  /* 480px altında: navbar ve paragraf esnek */
+  @media (max-width: 480px) {
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 100%;
+
+    .form-banner {
+      max-height: 200px;
+    }
+
+    .breadcrumb {
+      flex-wrap: wrap;
+      gap: 4px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    .breadcrumb .sep {
+      margin: 0 2px;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    .price-row .price {
+      font-size: 20px;
+    }
+
+    .price-row .rating .rating-count {
+      margin-left: 0;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 1.55;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+  }
 `
 
 export const SizeOptions = styled.div`
@@ -247,6 +299,14 @@ export const ToppingsGrid = styled.div`
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, auto);
     gap: 8px 16px;
+  }
+
+  /* Dar ekranlarda 2 sütun (≤480px) */
+  @media (max-width: 480px) {
+    .toppings-list {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+    }
   }
 
   .topping-item {
@@ -351,6 +411,33 @@ export const QuantityRow = styled.div`
   gap: 16px;
   margin-bottom: 24px;
 
+  /* 480px altında: üstte toplam kutusu, altta miktar + Sipariş Ver yan yana */
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: stretch;
+
+    .quantity-submit-row {
+      order: 2;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .quantity-submit-row .btn-mobile {
+      display: flex;
+      flex: 1;
+      min-width: 0;
+      justify-content: center;
+    }
+  }
+
+  /* Masaüstünde mobil butonu gizle */
+  @media (min-width: 481px) {
+    .quantity-submit-row .btn-mobile {
+      display: none;
+    }
+  }
+
   .quantity-group {
     display: flex;
     align-items: center;
@@ -403,6 +490,17 @@ export const SummaryCard = styled.div`
   border-radius: 8px;
   background: #FAF7F2;
   box-sizing: border-box;
+
+  /* 480px altında: kutu üstte tam genişlik, desktop buton gizli */
+  @media (max-width: 480px) {
+    order: 1;
+    max-width: none;
+    width: 100%;
+
+    .btn-desktop {
+      display: none;
+    }
+  }
 
   .summary-title {
     font-family: 'Barlow', sans-serif;
