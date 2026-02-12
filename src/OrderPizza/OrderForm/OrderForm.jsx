@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 import {
   FormWrapper,
   FormSection,
@@ -96,9 +97,30 @@ function OrderForm() {
     return (pizzaFiyati + malzemeFiyati) * formData.miktar
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!isFormValid()) return
+    const apiKey = import.meta.env.VITE_REQRES_API_KEY || 'reqres-free-v1'
+
+    axios
+      .post('https://reqres.in/api/pizza', formData, {
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey
+        }
+      })
+      .then((res) => {
+        console.log('Sipariş yanıtı:', res.data)
+      })
+      .catch((err) => {
+        console.error('Sipariş hatası:', err)
+      })
+  }
+  
+
   return (
     <FormWrapper>
-      <form>
+      <form onSubmit={handleSubmit}>
         <PizzaInfo>
           <h2>Position Absolute Acı Pizza</h2>
           <div className="price-row">
