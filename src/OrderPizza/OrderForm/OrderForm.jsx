@@ -55,6 +55,7 @@ function OrderForm({ onOrderSuccess }) {
     notlar: '',
     miktar: 1
   })
+  const [submitError, setSubmitError] = useState(null)
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -100,6 +101,7 @@ function OrderForm({ onOrderSuccess }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!isFormValid()) return
+    setSubmitError(null)
     const apiKey = import.meta.env.VITE_REQRES_API_KEY || 'reqres-free-v1'
 
     axios
@@ -115,6 +117,10 @@ function OrderForm({ onOrderSuccess }) {
       })
       .catch((err) => {
         console.error('Sipariş hatası:', err)
+        const message = err.code === 'ERR_NETWORK'
+          ? "İnternet'e bağlanılamadı. Lütfen bağlantınızı kontrol edip tekrar deneyin."
+          : 'Sipariş gönderilemedi. Lütfen tekrar deneyin.'
+        setSubmitError(message)
       })
   }
 
@@ -255,6 +261,7 @@ function OrderForm({ onOrderSuccess }) {
                 <span>{calculateTotal().toFixed(2)}₺</span>
               </div>
             </div>
+            {submitError && <div className="submit-error">{submitError}</div>}
             <SubmitButton type="submit" disabled={!isFormValid()}>
               SİPARİŞ VER
             </SubmitButton>

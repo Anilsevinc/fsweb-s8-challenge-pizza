@@ -301,6 +301,12 @@ export const SummaryCard = styled.div`
     color: #CE2829;
     font-weight: 600;
   }
+
+  .submit-error {
+    font-size: 12px;
+    color: #CE2829;
+    margin-bottom: 8px;
+  }
 `
 
 export const SubmitButton = styled.button`
