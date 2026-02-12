@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import {
   FormWrapper,
+  BejFullWidthWrapper,
   FormSection,
   PizzaInfo,
   SizeAndDoughRow,
@@ -16,9 +17,9 @@ import {
 } from './orderForm.style'
 
 const BOYUTLAR = [
-  { value: 'kucuk', label: 'Küçük' },
-  { value: 'orta', label: 'Orta' },
-  { value: 'buyuk', label: 'Büyük' }
+  { value: 'kucuk', label: 'S' },
+  { value: 'orta', label: 'M' },
+  { value: 'buyuk', label: 'L' }
 ]
 
 const HAMUR_SECENEKLERI = [
@@ -46,7 +47,7 @@ const MALZEMELER = [
 
 const MALZEME_FIYATI = 5
 
-function OrderForm({ onOrderSuccess }) {
+function OrderForm({ onOrderSuccess, onNavigateHome }) {
   const [formData, setFormData] = useState({
     isim: '',
     boyut: '',
@@ -128,19 +129,29 @@ function OrderForm({ onOrderSuccess }) {
   return (
     <FormWrapper>
       <form onSubmit={handleSubmit}>
-        <PizzaInfo>
-          <h2>Position Absolute Acı Pizza</h2>
-          <div className="price-row">
-            <span className="price">85.50₺</span>
-            <span className="rating">4.9 (200)</span>
-          </div>
-          <p>
-            Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre.
-            Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra
-            geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak,
-            düzleştirilmiş bir ekmek bazlı İtalyan yemeğidir. Küçük bir pizzaya bazen pizzetta denir.
-          </p>
-        </PizzaInfo>
+        <BejFullWidthWrapper>
+          <PizzaInfo>
+            <img src="/images/iteration-2-images/pictures/form-banner.png" alt="Position Absolute Acı Pizza" className="form-banner" />
+            <nav className="breadcrumb" aria-label="Breadcrumb">
+              <button type="button" onClick={onNavigateHome}>Anasayfa</button>
+              <span className="sep">-</span>
+              <span>Seçenekler</span>
+              <span className="sep">-</span>
+              <span className="current">Sipariş Oluştur</span>
+            </nav>
+            <h2>Position Absolute Acı Pizza</h2>
+            <div className="price-row">
+              <span className="price">85.50₺</span>
+              <span className="rating">4.9 <span className="rating-count">(200)</span></span>
+            </div>
+            <p>
+              Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre.
+              Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra
+              geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak,
+              düzleştirilmiş bir ekmek bazlı İtalyan yemeğidir. Küçük bir pizzaya bazen pizzetta denir.
+            </p>
+          </PizzaInfo>
+        </BejFullWidthWrapper>
 
         <SizeAndDoughRow>
           <div>
@@ -171,7 +182,7 @@ function OrderForm({ onOrderSuccess }) {
               value={formData.hamur}
               onChange={handleInputChange}
             >
-              <option value="">Hamur Kalınlığı</option>
+              <option value="">- Hamur Kalınlığı Seç -</option>
               {HAMUR_SECENEKLERI.map(hamur => (
                 <option key={hamur} value={hamur}>{hamur}</option>
               ))}

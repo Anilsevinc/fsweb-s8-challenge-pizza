@@ -4,11 +4,13 @@ import styled from 'styled-components'
 export const OrderPizzaSection = styled.div`
   width: 100%;
   margin: 0 auto;
-  padding: 2rem clamp(0.75rem, 4vw, 1rem);
+  padding: 0 clamp(0.75rem, 4vw, 1rem) 2rem;
   box-sizing: border-box;
   max-width: 1200px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 `
 
 /* Content wrapper - sayfanın diğer içerikleriyle aynı genişlikte olması için bir div oluşturdum ve sola hizaladım */

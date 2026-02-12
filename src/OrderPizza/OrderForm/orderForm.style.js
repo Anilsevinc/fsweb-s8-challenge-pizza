@@ -5,6 +5,15 @@ export const FormWrapper = styled.div`
   margin: 0 auto;
 `
 
+/* Nav'ın olduğu div'i saran parent: sadece bej arka plan, full width */
+export const BejFullWidthWrapper = styled.div`
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+  background: #FAF7F2;
+`
+
 export const FormSection = styled.div`
   margin-bottom: 24px;
 
@@ -23,11 +32,12 @@ export const FormSection = styled.div`
   .name-input {
     width: 100%;
     padding: 12px;
-    border: 1px solid #5F5F5F;
-    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
     font-family: 'Barlow', sans-serif;
     font-size: 14px;
     color: #292929;
+    background: #FAF7F2;
     box-sizing: border-box;
   }
 
@@ -75,6 +85,53 @@ export const SizeAndDoughRow = styled.div`
 
 export const PizzaInfo = styled.div`
   margin-bottom: 24px;
+  padding: 0 0 24px 0;
+  max-width: 530px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+
+  .form-banner {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 16px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    color: #5F5F5F;
+  }
+
+  .breadcrumb button {
+    background: none;
+    border: none;
+    color: #5F5F5F;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .breadcrumb button:hover {
+    color: #292929;
+    text-decoration: underline;
+  }
+
+  .breadcrumb .sep {
+    color: #5F5F5F;
+  }
+
+  .breadcrumb .current {
+    color: #CE2829;
+    font-weight: 600;
+  }
 
   h2 {
     font-family: 'Roboto Condensed', sans-serif;
@@ -86,8 +143,8 @@ export const PizzaInfo = styled.div`
 
   .price-row {
     display: flex;
-    align-items: center;
-    gap: 16px;
+    align-items: baseline;
+    justify-content: space-between;
     margin-bottom: 16px;
   }
 
@@ -104,6 +161,10 @@ export const PizzaInfo = styled.div`
     color: #5F5F5F;
   }
 
+  .price-row .rating .rating-count {
+    margin-left: 7em;
+  }
+
   p {
     font-family: 'Barlow', sans-serif;
     font-size: 14px;
@@ -115,39 +176,57 @@ export const PizzaInfo = styled.div`
 
 export const SizeOptions = styled.div`
   display: flex;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
 
   .size-option {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    position: relative;
   }
 
   .size-option input[type="radio"] {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
   }
 
   .size-option label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     font-family: 'Barlow', sans-serif;
     font-size: 14px;
+    font-weight: 600;
     color: #292929;
+    background: #FAF7F2;
+    border: 1px solid #e0e0e0;
     cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .size-option input[type="radio"]:checked + label {
+    background: #e8e8e8;
+    border-color: #d0d0d0;
   }
 `
 
 export const DoughSelect = styled.select`
   width: 100%;
-  padding: 12px;
-  border: 1px solid #5F5F5F;
-  border-radius: 4px;
+  padding: 12px 36px 12px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
   font-family: 'Barlow', sans-serif;
   font-size: 14px;
   color: #292929;
-  background: #fff;
+  background: #FAF7F2;
   box-sizing: border-box;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235F5F5F' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
 
   &:focus {
     outline: none;
@@ -171,33 +250,76 @@ export const ToppingsGrid = styled.div`
   }
 
   .topping-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    position: relative;
   }
 
   .topping-item input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
   }
 
   .topping-item label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
     font-family: 'Barlow', sans-serif;
     font-size: 14px;
+    font-weight: 500;
     color: #292929;
+    background: #fff;
+    border: none;
     cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .topping-item label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    background: #FAF7F2;
+  }
+
+  .topping-item input[type="checkbox"]:checked + label {
+    background: #fff;
+    border: none;
+  }
+
+  .topping-item input[type="checkbox"]:checked + label::before {
+    content: '✓';
+    border-color: #d0d0d0;
+    background: #FDC913;
+    color: #292929;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .topping-item input[type="checkbox"]:disabled + label {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 `
 
 export const NotesTextarea = styled.textarea`
   width: 100%;
   padding: 12px;
-  border: 1px solid #5F5F5F;
-  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
   font-family: 'Barlow', sans-serif;
   font-size: 14px;
   color: #292929;
+  background: #FAF7F2;
   resize: none;
   box-sizing: border-box;
   min-height: 44px;
@@ -217,7 +339,7 @@ export const NotesTextarea = styled.textarea`
 export const NotesSeparator = styled.div`
   width: 100%;
   height: 0;
-  border-top: 1px solid #5F5F5F;
+  border-top: 1px solid #e0e0e0;
   margin-top: 16px;
 `
 
@@ -235,12 +357,19 @@ export const QuantityRow = styled.div`
     gap: 8px;
   }
 
+  .quantity-group {
+    background: #FAF7F2;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 4px;
+  }
+
   .quantity-group button {
     width: 36px;
     height: 36px;
     background: #FDC913;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 18px;
     font-weight: 600;
     color: #292929;
@@ -255,7 +384,8 @@ export const QuantityRow = styled.div`
     width: 48px;
     text-align: center;
     padding: 8px;
-    border: 1px solid #5F5F5F;
+    border: none;
+    background: transparent;
     border-radius: 4px;
     font-size: 16px;
     font-weight: 600;
@@ -271,7 +401,7 @@ export const SummaryCard = styled.div`
   padding: 16px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  background: #fff;
+  background: #FAF7F2;
   box-sizing: border-box;
 
   .summary-title {
@@ -314,7 +444,7 @@ export const SubmitButton = styled.button`
   padding: 16px;
   background: #FDC913;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-family: 'Barlow', sans-serif;
   font-size: 16px;
   font-weight: 600;

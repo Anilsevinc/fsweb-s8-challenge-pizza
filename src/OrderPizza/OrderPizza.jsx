@@ -6,9 +6,9 @@ import { OrderPizzaSection } from './orderPizza.style'
 function OrderPizza({ onNavigateHome, onOrderSuccess }) {
   return (
     <>
-      <OrderHeader onNavigateHome={onNavigateHome} />
+      <OrderHeader />
       <OrderPizzaSection>
-        <OrderForm onOrderSuccess={onOrderSuccess} />
+        <OrderForm onOrderSuccess={onOrderSuccess} onNavigateHome={onNavigateHome} />
       </OrderPizzaSection>
     </>
   )
