@@ -1,4 +1,18 @@
 import React from 'react'
+import {
+  FormWrapper,
+  FormSection,
+  PizzaInfo,
+  SizeAndDoughRow,
+  SizeOptions,
+  DoughSelect,
+  ToppingsGrid,
+  NotesTextarea,
+  NotesSeparator,
+  QuantityRow,
+  SummaryCard,
+  SubmitButton
+} from './orderForm.style'
 
 const BOYUTLAR = [
   { value: 'kucuk', label: 'Küçük' },
@@ -31,14 +45,13 @@ const MALZEMELER = [
 
 function OrderForm() {
   return (
-    <div style={{ width: '530px', margin: '0 auto' }}>
+    <FormWrapper>
       <form>
-        {/* 1. Pizza bilgileri */}
-        <div>
+        <PizzaInfo>
           <h2>Position Absolute Acı Pizza</h2>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-            <span>85.50₺</span>
-            <span>4.9 (200)</span>
+          <div className="price-row">
+            <span className="price">85.50₺</span>
+            <span className="rating">4.9 (200)</span>
           </div>
           <p>
             Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre.
@@ -46,79 +59,79 @@ function OrderForm() {
             geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak,
             düzleştirilmiş bir ekmek bazlı İtalyan yemeğidir. Küçük bir pizzaya bazen pizzetta denir.
           </p>
-        </div>
+        </PizzaInfo>
 
-        {/* Boyut seçimi */}
-        <div>
-          <h3>Boyut Seç *</h3>
+        <SizeAndDoughRow>
           <div>
-            {BOYUTLAR.map(boyut => (
-              <div key={boyut.value}>
-                <input type="radio" id={boyut.value} name="boyut" value={boyut.value} />
-                <label htmlFor={boyut.value}>{boyut.label}</label>
-              </div>
-            ))}
+            <h3>Boyut Seç <span className="required">*</span></h3>
+            <SizeOptions>
+              {BOYUTLAR.map(boyut => (
+                <div key={boyut.value} className="size-option">
+                  <input type="radio" id={boyut.value} name="boyut" value={boyut.value} />
+                  <label htmlFor={boyut.value}>{boyut.label}</label>
+                </div>
+              ))}
+            </SizeOptions>
           </div>
-        </div>
+          <div>
+            <h3>Hamur Seç <span className="required">*</span></h3>
+            <DoughSelect name="hamur">
+              <option value="">Hamur Kalınlığı</option>
+              {HAMUR_SECENEKLERI.map(hamur => (
+                <option key={hamur} value={hamur}>{hamur}</option>
+              ))}
+            </DoughSelect>
+          </div>
+        </SizeAndDoughRow>
 
-        {/* 4. Hamur seçimi */}
-        <div>
-          <h3>Hamur Seç *</h3>
-          <select name="hamur">
-            <option value="">Hamur Kalınlığı</option>
-            {HAMUR_SECENEKLERI.map(hamur => (
-              <option key={hamur} value={hamur}>{hamur}</option>
-            ))}
-          </select>
-        </div>
-
-        {/* 5. Ek malzemeler */}
-        <div>
+        <FormSection>
           <h3>Ek Malzemeler</h3>
-          <p>En Fazla 10 malzeme seçebilirsiniz. 5₺</p>
-          <div>
-            {MALZEMELER.map(malzeme => (
-              <div key={malzeme}>
-                <input type="checkbox" id={malzeme} name="malzemeler" value={malzeme} />
-                <label htmlFor={malzeme}>{malzeme}</label>
-              </div>
-            ))}
-          </div>
-        </div>
+          <ToppingsGrid>
+            <p className="toppings-hint">En Fazla 10 malzeme seçebilirsiniz. 5₺</p>
+            <div className="toppings-list">
+              {MALZEMELER.map(malzeme => (
+                <div key={malzeme} className="topping-item">
+                  <input type="checkbox" id={malzeme} name="malzemeler" value={malzeme} />
+                  <label htmlFor={malzeme}>{malzeme}</label>
+                </div>
+              ))}
+            </div>
+          </ToppingsGrid>
+        </FormSection>
 
-        {/* 6. Sipariş notu */}
-        <div>
+        <FormSection>
           <h3>Sipariş Notu</h3>
-          <textarea
+          <NotesTextarea
             name="notlar"
             placeholder="Siparişine eklemek istediğin bir not var mı?"
-            rows="4"
+            rows={1}
           />
-        </div>
+          <NotesSeparator />
+        </FormSection>
 
-        {/* 7. Miktar seçici + 8. Sipariş toplamı */}
-        <div>
-          <div>
+        <QuantityRow>
+          <div className="quantity-group">
             <button type="button">-</button>
             <input type="text" value="1" readOnly />
             <button type="button">+</button>
           </div>
-          <div>
-            <div>
-              <span>Seçimler</span>
-              <span>0.00₺</span>
+          <SummaryCard>
+            <h3 className="summary-title">Sipariş Toplamı</h3>
+            <div className="summary">
+              <div className="summary-row">
+                <span>Seçimler</span>
+                <span>0.00₺</span>
+              </div>
+              <div className="summary-row total-row">
+                <span>Toplam</span>
+                <span>85.50₺</span>
+              </div>
             </div>
-            <div>
-              <span style={{ fontWeight: 'bold' }}>Toplam</span>
-              <span style={{ fontWeight: 'bold' }}>85.50₺</span>
-            </div>
-          </div>
-        </div>
-
-        {/* 9. Sipariş Ver butonu */}
-        <button type="submit">SİPARİŞ VER</button>
+            <SubmitButton type="submit">SİPARİŞ VER</SubmitButton>
+          </SummaryCard>
+        </QuantityRow>
       </form>
-    </div>
+    </FormWrapper>
   )
 }
 
