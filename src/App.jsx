@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Header from './components/Header/Header.jsx'
+import HomePage from './HomePage/HomePage.jsx'
 import OrderPizza from './OrderPizza/OrderPizza.jsx'
 import OrderSuccess from './OrderSuccess/OrderSuccess.jsx'
 
@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="app-root">
       {currentPage === 'home' && (
-        <Header onAciktimClick={() => setCurrentPage('order')} />
+        <HomePage onAciktimClick={() => setCurrentPage('order')} />
       )}
       {currentPage === 'order' && (
         <OrderPizza

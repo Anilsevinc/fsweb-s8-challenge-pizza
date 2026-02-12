@@ -1,15 +1,15 @@
 import './SpecialOffers.css'
 
-function SpecialOffers() {
+function SpecialOffers({ onSiparisClick }) {
   return (
     <section className="special-offers">
       <article className="offer-card offer-card-large">
         <div className="offer-card-content">
           <h2 className="offer-card-title">Özel Lezzetus</h2>
           <p className="offer-card-subtitle">Position: Absolute Acı Burger</p>
-          <a href="#" className="offer-card-button">
+          <button type="button" className="offer-card-button" onClick={onSiparisClick}>
             SİPARİŞ VER
-          </a>
+          </button>
         </div>
       </article>
 
