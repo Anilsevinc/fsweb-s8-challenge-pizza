@@ -19,6 +19,28 @@ export const FormSection = styled.div`
   h3 .required {
     color: #CE2829;
   }
+
+  .name-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #5F5F5F;
+    border-radius: 4px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    color: #292929;
+    box-sizing: border-box;
+  }
+
+  .name-input:focus {
+    outline: none;
+    border-color: #CE2829;
+  }
+
+  .field-error {
+    font-size: 12px;
+    color: #CE2829;
+    margin-top: 4px;
+  }
 `
 
 /* Boyut Seç + Hamur Seç yan yana */
@@ -288,7 +310,12 @@ export const SubmitButton = styled.button`
   text-transform: uppercase;
   cursor: pointer;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background: #ffd633;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 `
