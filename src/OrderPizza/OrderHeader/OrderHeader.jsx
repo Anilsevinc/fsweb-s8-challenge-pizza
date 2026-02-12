@@ -68,7 +68,7 @@ const Separator = styled.span`
   color: #ffffff;
 `
 
-function OrderHeader() {
+function OrderHeader({ onNavigateHome }) {
   return (
     <HeaderWrapper>
       <HeaderContainer>
@@ -76,7 +76,7 @@ function OrderHeader() {
           <Logo src={logoSrc} alt="Teknolojik Yemekler" />
         </LogoWrapper>
         <Nav>
-          <NavButton type="button">Anasayfa</NavButton>
+          <NavButton type="button" onClick={onNavigateHome}>Anasayfa</NavButton>
           <Separator>-</Separator>
           <NavButton type="button">Seçenekler</NavButton>
           <Separator>-</Separator>

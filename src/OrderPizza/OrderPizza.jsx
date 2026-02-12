@@ -1,15 +1,14 @@
 import React from 'react'
 import OrderHeader from './OrderHeader/OrderHeader'
-import { OrderPizzaSection, ContentWrapper } from './orderPizza.style'
+import OrderForm from './OrderForm/OrderForm'
+import { OrderPizzaSection } from './orderPizza.style'
 
-/* OrderPizza sayfasının içeriğini oluşturuyorum, ilk olarak Header bölümünü oluşturdum */
-function OrderPizza() {
+function OrderPizza({ onNavigateHome }) {
   return (
     <>
-      <OrderHeader />
+      <OrderHeader onNavigateHome={onNavigateHome} />
       <OrderPizzaSection>
-        <ContentWrapper>
-        </ContentWrapper>
+        <OrderForm />
       </OrderPizzaSection>
     </>
   )

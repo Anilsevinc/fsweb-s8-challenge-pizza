@@ -1,6 +1,6 @@
 import './Header.css'
 
-function Header() {
+function Header({ onAciktimClick }) {
   return (
     <header className="header-section">
       <div className="header-logo">
@@ -13,9 +13,9 @@ function Header() {
           <span className="header-headline-main">KOD ACIKTIRIR</span>
           <span className="header-headline-sub">PIZZA, DOYURUR</span>
         </h1>
-        <a href="#" className="header-button">
+        <button type="button" className="header-button" onClick={onAciktimClick}>
           ACIKTIM
-        </a>
+        </button>
       </div>
     </header>
   )

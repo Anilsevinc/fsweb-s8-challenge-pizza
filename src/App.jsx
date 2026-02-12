@@ -1,22 +1,19 @@
+import { useState } from 'react'
 import './App.css'
 import Header from './components/Header/Header.jsx'
-import CategoryNav from './components/CategoryNav/CategoryNav.jsx'
-import SpecialOffers from './components/SpecialOffers/SpecialOffers.jsx'
-import ProductSectionHeader from './components/ProductSectionHeader/ProductSectionHeader.jsx'
-import CategoryTabs from './components/CategoryTabs/CategoryTabs.jsx'
-import ProductCards from './components/ProductCards/ProductCards.jsx'
-import Footer from './components/Footer/Footer.jsx'
+import OrderPizza from './OrderPizza/OrderPizza.jsx'
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('home')
+
   return (
     <div className="app-root">
-      <Header />
-      <CategoryNav />
-      <SpecialOffers />
-      <ProductSectionHeader />
-      <CategoryTabs />
-      <ProductCards />
-      <Footer />
+      {currentPage === 'home' && (
+        <Header onAciktimClick={() => setCurrentPage('order')} />
+      )}
+      {currentPage === 'order' && (
+        <OrderPizza onNavigateHome={() => setCurrentPage('home')} />
+      )}
     </div>
   )
 }
