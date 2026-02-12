@@ -131,6 +131,9 @@ function OrderForm() {
                 </div>
               ))}
             </SizeOptions>
+            {formData.boyut === '' && (
+              <div className="field-error">Boyut seçmelisiniz</div>
+            )}
           </div>
           <div>
             <h3>Hamur Seç <span className="required">*</span></h3>
@@ -144,6 +147,9 @@ function OrderForm() {
                 <option key={hamur} value={hamur}>{hamur}</option>
               ))}
             </DoughSelect>
+            {formData.hamur === '' && (
+              <div className="field-error">Hamur seçmelisiniz</div>
+            )}
           </div>
         </SizeAndDoughRow>
 
@@ -172,6 +178,13 @@ function OrderForm() {
               })}
             </div>
           </ToppingsGrid>
+          {formData.malzemeler.length < 4 && (
+            <div className="field-error">
+              {formData.malzemeler.length === 0
+                ? 'En az 4 malzeme seçmelisiniz'
+                : `En az 4 malzeme seçmelisiniz (${formData.malzemeler.length}/4)`}
+            </div>
+          )}
         </FormSection>
 
         <FormSection>

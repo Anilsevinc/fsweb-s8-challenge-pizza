@@ -65,6 +65,12 @@ export const SizeAndDoughRow = styled.div`
   h3 .required {
     color: #CE2829;
   }
+
+  .field-error {
+    font-size: 12px;
+    color: #CE2829;
+    margin-top: 4px;
+  }
 `
 
 export const PizzaInfo = styled.div`
