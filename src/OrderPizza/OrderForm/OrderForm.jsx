@@ -56,10 +56,11 @@ function OrderForm({ onOrderSuccess, onNavigateHome }) {
     notlar: '',
     miktar: 1
   })
+
   const [submitError, setSubmitError] = useState(null)
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target
+  const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
@@ -103,6 +104,7 @@ function OrderForm({ onOrderSuccess, onNavigateHome }) {
     e.preventDefault()
     if (!isFormValid()) return
     setSubmitError(null)
+
     const apiKey = import.meta.env.VITE_REQRES_API_KEY || 'reqres-free-v1'
 
     axios

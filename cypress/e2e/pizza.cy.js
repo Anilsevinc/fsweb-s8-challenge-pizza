@@ -48,7 +48,7 @@ describe('Sipariş Formu', () => {
     cy.get('input#Mısır').check({ force: true })
     cy.get('input#Jalapeno').check({ force: true })
 
-    cy.contains('button', 'SİPARİŞ VER').should('not.be.disabled').click()
+    cy.get('button.btn-desktop').should('not.be.disabled').click()
 
     cy.wait('@submitOrder').its('request.method').should('eq', 'POST')
   })
@@ -77,7 +77,7 @@ describe('Sipariş başarı sayfası', () => {
     cy.get('input#Sosis').check({ force: true })
     cy.get('input#Mısır').check({ force: true })
     cy.get('input#Jalapeno').check({ force: true })
-    cy.contains('button', 'SİPARİŞ VER').should('not.be.disabled').click()
+    cy.get('button.btn-desktop').should('not.be.disabled').click()
 
     cy.wait('@submitOrder')
     cy.contains('h1', 'SİPARİŞ ALINDI').should('be.visible')
@@ -108,7 +108,7 @@ describe('Sipariş başarı sayfası', () => {
     cy.get('input#Sosis').check({ force: true })
     cy.get('input#Mısır').check({ force: true })
     cy.get('input#Jalapeno').check({ force: true })
-    cy.contains('button', 'SİPARİŞ VER').click()
+    cy.get('button.btn-desktop').click()
     cy.wait('@submitOrder')
     cy.contains('h1', 'SİPARİŞ ALINDI').should('be.visible')
 
@@ -124,14 +124,14 @@ describe('Form doğrulama', () => {
   })
 
   it('form eksikken Sipariş Ver butonu disabled kalır', () => {
-    cy.contains('button', 'SİPARİŞ VER').should('be.disabled')
+    cy.get('button.btn-desktop').should('be.disabled')
     cy.get('input[name="isim"]').type('Ab')
     cy.get('input[name="boyut"][value="orta"]').check({ force: true })
     cy.get('select[name="hamur"]').select('İnce Hamur')
     cy.get('input#Pepperoni').check({ force: true })
     cy.get('input#Sosis').check({ force: true })
     cy.get('input#Mısır').check({ force: true })
-    cy.contains('button', 'SİPARİŞ VER').should('be.disabled')
+    cy.get('button.btn-desktop').should('be.disabled')
   })
 
   it('en az 4 malzeme seçilmeden Sipariş Ver butonu disabled kalır', () => {
@@ -142,9 +142,9 @@ describe('Form doğrulama', () => {
     cy.get('label[for="Sosis"]').click()
     cy.get('label[for="Mısır"]').click()
     cy.get('label[for="Jalapeno"]').click()
-    cy.contains('button', 'SİPARİŞ VER').should('not.be.disabled')
+    cy.get('button.btn-desktop').should('not.be.disabled')
     cy.get('label[for="Mısır"]').click()
-    cy.contains('button', 'SİPARİŞ VER').should('be.disabled')
+    cy.get('button.btn-desktop').should('be.disabled')
   })
 })
 
@@ -164,7 +164,7 @@ describe('Ağ hatası geri bildirimi', () => {
     cy.get('input#Sosis').check({ force: true })
     cy.get('input#Mısır').check({ force: true })
     cy.get('input#Jalapeno').check({ force: true })
-    cy.contains('button', 'SİPARİŞ VER').click()
+    cy.get('button.btn-desktop').click()
 
     cy.wait('@submitOrderFail')
     cy.get('.submit-error').should('be.visible').and('contain.text', 'Sipariş gönderilemedi')
@@ -184,7 +184,7 @@ describe('Ağ hatası geri bildirimi', () => {
     cy.get('input#Sosis').check({ force: true })
     cy.get('input#Mısır').check({ force: true })
     cy.get('input#Jalapeno').check({ force: true })
-    cy.contains('button', 'SİPARİŞ VER').click()
+    cy.get('button.btn-desktop').click()
 
     cy.wait('@networkError')
     cy.get('.submit-error').should('be.visible').and('contain.text', "İnternet'e bağlanılamadı")
